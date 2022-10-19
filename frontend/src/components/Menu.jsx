@@ -1,11 +1,11 @@
 import React from "react";
 
-const Menu = () => {
+function Menu() {
   return (
     <div>
       <h1 className="title">LEGENDS</h1>
     </div>
   );
-};
+}
 
 export default Menu;
