@@ -7,3 +7,5 @@ export default function Home() {
     </header>
   );
 }
+
+// Hugo
