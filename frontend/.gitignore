@@ -13,6 +13,10 @@ dist-ssr
 *.local
 .env
 
+tailwind.config.js
+vite.config.ts
+postcss.config.js
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
