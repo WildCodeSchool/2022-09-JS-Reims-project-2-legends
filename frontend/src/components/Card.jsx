@@ -9,7 +9,7 @@ import {
 export default function Card(props) {
   const { image, name, intelligence, strength, life, children } = props;
   return (
-    <MTCard className="w-48 h-80 bg-black m-4">
+    <MTCard className="w-48 h-80 bg-black m-4 mx-auto mb-44">
       <CardHeader floated={false} className="mt-4 p-y-6">
         <img className="" src={image} alt={name} />
       </CardHeader>

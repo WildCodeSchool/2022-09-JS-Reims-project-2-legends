@@ -27,20 +27,20 @@ function App() {
   return (
     <div className="App">
       <Card
+        image={enemy.image}
+        alt={enemy.name}
+        name={enemy.name}
+        intelligence={enemy.intelligence}
+        strength={enemy.strength}
+        life={enemy.life}
+      />
+      <Card
         image={hero.image}
         alt={hero.name}
         name={hero.name}
         intelligence={hero.intelligence}
         strength={hero.strength}
         life={hero.life}
-      />
-      <Card
-        image={enemyInitialState.image}
-        alt={enemyInitialState.name}
-        name={enemyInitialState.name}
-        intelligence={enemyInitialState.intelligence}
-        strength={enemyInitialState.strength}
-        life={enemyInitialState.life}
       >
         <div className="flex flex-row w-full">
           <button
