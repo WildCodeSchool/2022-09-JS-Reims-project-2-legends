@@ -1,4 +1,3 @@
-/* eslint-disable-next-line react/jsx-props-no-spreading */
 import "./App.css";
 import React from "react";
 import Card from "@components/Card.jsx";
@@ -27,10 +26,25 @@ function App() {
   };
   return (
     <div className="App">
-      <Card {...enemy} />
-      <Card {...hero}>
+      <Card
+        image={hero.image}
+        alt={hero.name}
+        name={hero.name}
+        intelligence={hero.intelligence}
+        strength={hero.strength}
+        life={hero.life}
+      />
+      <Card
+        image={enemyInitialState.image}
+        alt={enemyInitialState.name}
+        name={enemyInitialState.name}
+        intelligence={enemyInitialState.intelligence}
+        strength={enemyInitialState.strength}
+        life={enemyInitialState.life}
+      >
         <div className="flex flex-row w-full">
           <button
+            type="button"
             className="bg-red-500 w-full h-8 text-white"
             onClick={() => {
               const damage = Math.floor(Math.random() * hero.strength);
@@ -39,7 +53,9 @@ function App() {
           >
             Attack
           </button>
-          <button className="bg-blue-500 w-full h-8 text-white">Defend</button>
+          <button type="button" className="bg-blue-500 w-full h-8 text-white">
+            Defend
+          </button>
         </div>
       </Card>
     </div>
