@@ -1,12 +1,47 @@
-import Home from "@pages/Home";
-
+/* eslint-disable-next-line react/jsx-props-no-spreading */
 import "./App.css";
+import React from "react";
+import Card from "@components/Card.jsx";
+
+const hero = {
+  name: "Nightcrawler",
+  image:
+    "https://i.pinimg.com/736x/1b/58/f2/1b58f20fc5556f3fbddd26703a33f250--marvel-dc-comics-marvel.jpg",
+  intelligence: 20,
+  strength: 30,
+  life: 100,
+};
+const enemyInitialState = {
+  name: "Magneto",
+  image:
+    "https://w0.peakpx.com/wallpaper/516/619/HD-wallpaper-magneto-dark-mag.jpg",
+  intelligence: 20,
+  strength: 40,
+  life: 100,
+};
 
 function App() {
+  const [enemy, setEnemy] = React.useState(enemyInitialState);
+  const setEnemyLife = (life) => {
+    setEnemy({ ...enemy, life });
+  };
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <Card {...enemy} />
+      <Card {...hero}>
+        <div className="flex flex-row w-full">
+          <button
+            className="bg-red-500 w-full h-8 text-white"
+            onClick={() => {
+              const damage = Math.floor(Math.random() * hero.strength);
+              setEnemyLife(enemy.life - damage);
+            }}
+          >
+            Attack
+          </button>
+          <button className="bg-blue-500 w-full h-8 text-white">Defend</button>
+        </div>
+      </Card>
     </div>
   );
 }
