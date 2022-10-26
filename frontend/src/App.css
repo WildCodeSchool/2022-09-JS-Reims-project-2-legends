@@ -5,11 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
-  padding: 0%;
-  margin: 0%;
-} */
-
 .App {
   background-image: url("assets/marvel-vs-dc-4k-iu.jpg");
   background-size: cover;
