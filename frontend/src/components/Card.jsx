@@ -16,7 +16,7 @@ export default function Card(props) {
       <CardBody className="text-center p-0">
         <Typography
           variant="h4"
-          color="blue-gray"
+          color="blue-gray "
           className="mb-2  text-yellow-500"
         >
           {name}
