@@ -22,6 +22,7 @@ export default function Heroes() {
       <button type="button" onClick={fetchData}>
         Click here
       </button>
+      <p>{heroes}</p>
     </div>
   );
 }
