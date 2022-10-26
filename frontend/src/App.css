@@ -1,22 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Istok+Web&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 
-* {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* * {
   padding: 0%;
   margin: 0%;
-}
+} */
 
 .App {
-  background-image: url("marvel-vs-dc-4k-iu.jpg");
+  background-image: url("assets/marvel-vs-dc-4k-iu.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh;
-}
-
-.title {
-  text-align: center;
-  color: #fbff20;
-  text-shadow: 2px 2px 4px black;
-  font-family: "Istok Web", sans-serif;
+  min-height: 100vh;
 }
