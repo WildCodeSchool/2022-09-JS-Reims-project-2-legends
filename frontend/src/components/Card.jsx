@@ -39,8 +39,6 @@ export default function Card(props) {
               <label className="text-white font-black" htmlFor="life">
                 {life}
               </label>
-              {/* <div className="bg-red-500 w-32 8 h-2" />
-              <div className="text-white ">{life}</div> */}
             </div>
           </Typography>
         </CardBody>
