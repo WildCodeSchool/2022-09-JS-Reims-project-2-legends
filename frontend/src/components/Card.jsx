@@ -9,11 +9,11 @@ import {
 export default function Card(props) {
   const { image, name, intelligence, strength, life, children } = props;
   return (
-    <MTCard className="w-48 h-80 bg-black m-4">
-      <CardHeader floated={false} className="mt-4 p-y-6">
+    <MTCard className="w-48 h-80 bg-black m-4 relatives">
+      <CardHeader floated={false} className="m-0">
         <img className="" src={image} alt={name} />
       </CardHeader>
-      <CardBody className="text-center p-1">
+      <CardBody className="text-center p-0">
         <Typography
           variant="h4"
           color="blue-gray"
@@ -22,13 +22,13 @@ export default function Card(props) {
           {name}
         </Typography>
         <Typography className="grid grid-cols-2" textGradient>
-          <div className="flex justify-center items-center">
-            <img className="w-4 h-4" src="./icons/cerveau.png" alt="icon" />
+          <div className="flex justify-center items-center absolute top-1 left-2 shadow-lg bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 ">
+            <img className="w-5 h-5" src="./icons/cerveau.png" alt="icon" />
             <div className="text-white ">{intelligence}</div>
           </div>
 
-          <div className="flex justify-center items-center">
-            <img className="w-4 h-4" src="./icons/sword.png" alt="icon" />
+          <div className="flex justify-center items-center absolute top-1 right-2 bg-black p-0.05 rounded-xl border-red-400 border-solid border-2">
+            <img className="w-5 h-5" src="./icons/sword.png" alt="icon" />
             <div className="text-white ">{strength}</div>
           </div>
           <div className="flex justify-center items-center col-span-2">

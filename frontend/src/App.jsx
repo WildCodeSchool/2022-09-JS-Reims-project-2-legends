@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import Card from "@components/Card.jsx";
+import Card from "./components/Card";
 
 const hero = {
   name: "Nightcrawler",
