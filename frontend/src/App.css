@@ -1,7 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html {
+  background-color: black;
+}
 
 * {
   color: black;
+}
+
+.App {
+  height: 100vh;
+  background-image: url(./images/bg-img.jpg);
+  background-position: center;
+  background-size: cover;
 }

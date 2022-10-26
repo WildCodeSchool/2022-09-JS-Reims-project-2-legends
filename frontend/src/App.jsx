@@ -1,13 +1,14 @@
 import "./App.css";
 import React from "react";
 import Card from "./components/Card";
+import Heroes from "./components/Heroes";
 
 const hero = {
   name: "Nightcrawler",
   image:
     "https://i.pinimg.com/736x/1b/58/f2/1b58f20fc5556f3fbddd26703a33f250--marvel-dc-comics-marvel.jpg",
-  intelligence: 20,
-  strength: 30,
+  intelligence: 15,
+  strength: 20,
   life: 100,
 };
 const enemyInitialState = {
@@ -26,7 +27,16 @@ function App() {
   };
   return (
     <div className="App">
-      <div className="flex flex-col gap-36">
+      <Heroes />
+      <div className="m-0 p-0 flex flex-col gap-32">
+        <Card
+          image={enemy.image}
+          alt={enemy.name}
+          name={enemy.name}
+          intelligence={enemy.intelligence}
+          strength={enemy.strength}
+          life={enemy.life}
+        />
         <Card
           image={hero.image}
           alt={hero.name}
@@ -34,14 +44,6 @@ function App() {
           intelligence={hero.intelligence}
           strength={hero.strength}
           life={hero.life}
-        />
-        <Card
-          image={enemyInitialState.image}
-          alt={enemyInitialState.name}
-          name={enemyInitialState.name}
-          intelligence={enemyInitialState.intelligence}
-          strength={enemyInitialState.strength}
-          life={enemyInitialState.life}
         >
           <div className="flex flex-row w-full">
             <button
