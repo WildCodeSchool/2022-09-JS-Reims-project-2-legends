@@ -2,12 +2,12 @@ import React from "react";
 
 function Menu() {
   return (
-    <header className="h-screen flex flex-col justify-between items-center">
+    <header className="flex flex-col justify-between px-8">
       <h1 className="text-yellow-300 text-center text-4xl font-istok-web my-4">
         LEGENDS
       </h1>
       <nav className="text-center font-iceland text-2xl ">
-        <ul className="flex justify-around items-center">
+        <ul className="navbar flex justify-between  text-green-400">
           <li>
             <a href="/">CARTES</a>
           </li>
@@ -19,10 +19,6 @@ function Menu() {
           </li>
         </ul>
       </nav>
-      <p>
-        Lorem ipsum odor amet, consectetuer adipiscing elit. Netus sem proin
-        arcu laoreet accumsan blandit! Phasellus porttitor curabitur per.
-      </p>
     </header>
   );
 }
