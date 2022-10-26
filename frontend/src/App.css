@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,13 +8,18 @@ html {
   background-color: black;
 }
 
-* {
-  color: black;
-}
-
 .App {
-  height: 100vh;
-  background-image: url(./images/bg-img.jpg);
-  background-position: center;
+  background-image: url("assets/marvel-vs-dc-4k-iu-v3.png");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+.navbar {
+  padding-left: 5px;
+  padding-right: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
