@@ -9,9 +9,9 @@ import {
 export default function Card(props) {
   const { image, name, intelligence, strength, life, children } = props;
   return (
-    <div className="flex justify-center">
-      <MTCard className="w-48 h-80 bg-black m-4 relatives ">
-        <CardHeader floated={false} className="m-0">
+    <div className="flex justify-center box-content">
+      <MTCard className="w-48 h-80 bg-black m-4 relatives border-2 border-black border-solid ">
+        <CardHeader floated={false} className="-m-0">
           <img className="" src={image} alt={name} />
         </CardHeader>
         <CardBody className="text-center p-0">
@@ -33,8 +33,12 @@ export default function Card(props) {
               <div className="text-white ">{strength}</div>
             </div>
             <div className="flex justify-center items-center col-span-2">
-              <div className="bg-red-500 w-[100px] h-2" />
-              <div className="text-white ">{life}</div>
+              <progress id="life" style={{ width: `${life}px` }} value={life}>
+                {life}
+              </progress>
+              <label className="text-white font-black" htmlFor="life">
+                {life}
+              </label>
             </div>
           </Typography>
         </CardBody>

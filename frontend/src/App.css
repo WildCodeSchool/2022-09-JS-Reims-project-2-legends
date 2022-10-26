@@ -4,6 +4,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html {
+  background-color: black;
+}
 
 .App {
   background-image: url("assets/marvel-vs-dc-4k-iu-v3.png");
@@ -12,7 +15,6 @@
   background-position: center;
   min-height: 100vh;
 }
-
 .navbar {
   padding-left: 5px;
   padding-right: 5px;
