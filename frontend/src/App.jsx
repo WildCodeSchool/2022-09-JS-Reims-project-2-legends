@@ -61,7 +61,6 @@ function App() {
           </button>
         </div>
       </Card>
-      
       <div className="flex flex-col gap-36">
         <Card
           image={hero.image}
