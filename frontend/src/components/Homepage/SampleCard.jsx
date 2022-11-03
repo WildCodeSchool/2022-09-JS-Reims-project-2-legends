@@ -14,8 +14,10 @@ export default function SampleCard() {
         <CardHeader floated={false} className="-m-0">
           <img
             className=""
+
             src={samplecarddata.image}
             alt={samplecarddata.name}
+
           />
         </CardHeader>
         <CardBody className="text-center p-0">
