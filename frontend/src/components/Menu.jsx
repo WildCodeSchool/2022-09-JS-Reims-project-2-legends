@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../assets/legends-logo.png";
 
 function Menu() {
   return (
@@ -6,6 +7,8 @@ function Menu() {
       <h1 className="text-yellow-300 text-center text-4xl font-istok-web my-4">
         LEGENDS
       </h1>
+      <img className="logo" src={logo} alt="Legends logo" />
+      <br />
       <nav className="text-center font-iceland text-2xl ">
         <ul className="navbar flex justify-between  text-green-400">
           <li>
