@@ -1,8 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import DraftPage from "./components/Draft/DraftPage";
-// eslint-disable-next-line import/no-unresolved
-import HomePage from "./components/Homepage/HomePage";
+import HomePage from "./components/Homepage/Homepage";
 import CombatMode from "./components/Combat/CombatMode";
 
 export default function App() {
