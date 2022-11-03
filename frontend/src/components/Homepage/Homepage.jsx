@@ -8,7 +8,7 @@ import logo from "../../assets/legends-logo.png";
 function HomePage({ play }) {
   const [tab, setTab] = useState("rules");
   return (
-    <div className="h-screen w-screen flex flex-col justify-evenly items-center text-yellow-500">
+    <section className="h-screen w-screen flex flex-col justify-evenly items-center text-yellow-500">
       <h1 className="text-2xl text-white">LEGENDS</h1>
       <img className="logo" src={logo} alt="Legends logo" />
       <br />
@@ -50,7 +50,7 @@ function HomePage({ play }) {
       >
         PLAY
       </button>
-    </div>
+    </section>
   );
 }
 HomePage.propTypes = {
