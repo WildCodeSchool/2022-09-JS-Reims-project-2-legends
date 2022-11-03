@@ -1,13 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import MiniCard from "../Global/MiniCard";
-// import Card from "../Global/Card";
 
 export default function CombatMode({ cardSelected, cardComputer }) {
   const deckCardsComputer = cardComputer;
   const deckCardsPlayer = cardSelected;
-  //   const [playedCard, setPlayedCard] = useState({});
-  //   const [playedCardComputer, setPlayedCardComputer] = useState({});
   return (
     <div className="flex flex-col h-screen">
       <div className="text-yellow-700 h-[20%] bg-black">
@@ -26,11 +23,9 @@ export default function CombatMode({ cardSelected, cardComputer }) {
             {" "}
             <h1 className="text-yellow-700 text-3xl -rotate-45">VERSUS</h1>
           </span>
-
-          <div>{/* <Card playedCard={playedCard}></Card> */}</div>
         </div>
       </div>
-      <div className="text-yellow-700 h-[20%] bg-black">
+      <section className="text-yellow-700 h-[20%] bg-black">
         <h2 className="text-center h-[10%]">My deck</h2>
         <div className="grid grid-cols-6 h-[90%]">
           {deckCardsPlayer.map((deckCard) => (
@@ -41,7 +36,7 @@ export default function CombatMode({ cardSelected, cardComputer }) {
             />
           ))}
         </div>
-      </div>
+      </section>
     </div>
   );
 }
