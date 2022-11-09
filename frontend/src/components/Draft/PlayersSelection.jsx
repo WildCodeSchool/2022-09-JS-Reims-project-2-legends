@@ -22,7 +22,7 @@ export default function PlayersSelection({
             <MiniCard dataDeck={el} />
           ))}
         </div>
-        <h2 className="text-center h-[10%]">Opponent Deck</h2>
+        <h1 className="text-center h-[10%]">Opponent Deck</h1>
       </div>
 
       <div className="Container flex items-center w-screen overflow-x-scroll h-full xl:justify-center xl:overflow-hidden gap-6">
@@ -56,7 +56,7 @@ export default function PlayersSelection({
         ))}
       </div>
       <section className="text-yellow-700 h-[20%] bg-black">
-        <h2 className="text-center h-[10%]">My deck</h2>
+        <h1 className="text-center h-[10%]">My deck</h1>
         <div className="grid grid-cols-6 h-[90%]">
           {cardSelected.map((el) => (
             <MiniCard dataDeck={el} />
@@ -68,11 +68,66 @@ export default function PlayersSelection({
 }
 
 PlayersSelection.propTypes = {
-  cardSelected: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.shape))
-    .isRequired,
-  cardComputer: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.shape))
-    .isRequired,
-  characters: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.shape)).isRequired,
+  cardSelected: PropTypes.arrayOf(
+    PropTypes.objectOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        powerstats: PropTypes.objectOf(
+          PropTypes.shape({
+            intelligence: PropTypes.string,
+            strength: PropTypes.string,
+            speed: PropTypes.string,
+            durability: PropTypes.string,
+            power: PropTypes.string,
+            combat: PropTypes.string,
+          })
+        ),
+        image: PropTypes.PropTypes.objectOf(
+          PropTypes.shape({ url: PropTypes.string })
+        ),
+      })
+    )
+  ).isRequired,
+  cardComputer: PropTypes.arrayOf(
+    PropTypes.objectOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        powerstats: PropTypes.objectOf(
+          PropTypes.shape({
+            intelligence: PropTypes.string,
+            strength: PropTypes.string,
+            speed: PropTypes.string,
+            durability: PropTypes.string,
+            power: PropTypes.string,
+            combat: PropTypes.string,
+          })
+        ),
+        image: PropTypes.PropTypes.objectOf(
+          PropTypes.shape({ url: PropTypes.string })
+        ),
+      })
+    )
+  ).isRequired,
+  characters: PropTypes.arrayOf(
+    PropTypes.objectOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        powerstats: PropTypes.objectOf(
+          PropTypes.shape({
+            intelligence: PropTypes.string,
+            strength: PropTypes.string,
+            speed: PropTypes.string,
+            durability: PropTypes.string,
+            power: PropTypes.string,
+            combat: PropTypes.string,
+          })
+        ),
+        image: PropTypes.PropTypes.objectOf(
+          PropTypes.shape({ url: PropTypes.string })
+        ),
+      })
+    )
+  ).isRequired,
   setCardSelected: PropTypes.func.isRequired,
   setCardComputer: PropTypes.func.isRequired,
   setCharacters: PropTypes.func.isRequired,

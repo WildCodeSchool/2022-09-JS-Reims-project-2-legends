@@ -64,11 +64,47 @@ export default function DraftPage({
 DraftPage.propTypes = {
   draftRound: PropTypes.number.isRequired,
   setDraftRound: PropTypes.func.isRequired,
-  cardSelected: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.shape))
-    .isRequired,
+  cardSelected: PropTypes.arrayOf(
+    PropTypes.objectOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        powerstats: PropTypes.objectOf(
+          PropTypes.shape({
+            intelligence: PropTypes.string,
+            strength: PropTypes.string,
+            speed: PropTypes.string,
+            durability: PropTypes.string,
+            power: PropTypes.string,
+            combat: PropTypes.string,
+          })
+        ),
+        image: PropTypes.PropTypes.objectOf(
+          PropTypes.shape({ url: PropTypes.string })
+        ),
+      })
+    )
+  ).isRequired,
   setCardSelected: PropTypes.func.isRequired,
-  cardComputer: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.shape))
-    .isRequired,
+  cardComputer: PropTypes.arrayOf(
+    PropTypes.objectOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        powerstats: PropTypes.objectOf(
+          PropTypes.shape({
+            intelligence: PropTypes.string,
+            strength: PropTypes.string,
+            speed: PropTypes.string,
+            durability: PropTypes.string,
+            power: PropTypes.string,
+            combat: PropTypes.string,
+          })
+        ),
+        image: PropTypes.PropTypes.objectOf(
+          PropTypes.shape({ url: PropTypes.string })
+        ),
+      })
+    )
+  ).isRequired,
   setCardComputer: PropTypes.func.isRequired,
   setActivePage: PropTypes.func.isRequired,
 };
