@@ -29,71 +29,71 @@ export default function SampleCard() {
           </Typography>
           <Typography className="grid grid-cols-2" textGradient>
             <div className="hover-parent flex justify-center items-center absolute top-[0%] -left-5 shadow-lg bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 w-10 h-8">
-              <section className=" show-on-hover">
+              <div className="hover-el show-on-hover-left">
                 <p>Intelligence </p>
-              </section>
+              </div>
               <img
                 className="h-[20px] "
                 src="./icons/brainstorm.png"
                 alt="intelligence"
               />
-              <div className="text-white ">81</div>
+              <span className="text-white ">81</span>
             </div>
             <div className="hover-parent flex justify-center items-center absolute top-[30%] -left-5 shadow-lg bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 w-10 h-8">
-              <section className=" show-on-hover">
+              <div className="hover-el show-on-hover-left">
                 <p>Strength </p>
-              </section>
+              </div>
               <img
                 className="h-[20px] "
                 src="./icons/magic.png"
                 alt="strength"
               />
-              <div className="text-white ">40</div>
+              <span className="text-white ">40</span>
             </div>
             <div className="hover-parent flex justify-center items-center absolute top-[58%] -left-5 shadow-lg bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 w-10 h-8">
-              <section className=" show-on-hover">
+              <div className="hover-el show-on-hover-left">
                 <p>Durability </p>
-              </section>
+              </div>
               <img
                 className="h-[20px] "
                 src="./icons/flash.png"
                 alt="durability"
               />
-              <div className="text-white ">55</div>
+              <span className="text-white ">55</span>
             </div>
 
             <div className="hover-parent flex justify-center items-center absolute top-[0%] -right-5 bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 h-[33px] w-10">
-              <section className=" show-on-hover-right">
+              <div className="hover-el show-on-hover-right">
                 <p>Power </p>
-              </section>
+              </div>
               <img
                 className="h-[20px] "
                 src="./icons/protest.png"
                 alt="power"
               />
-              <div className="text-white ">63</div>
+              <span className="text-white ">63</span>
             </div>
             <div className="hover-parent flex justify-center items-center absolute top-[30%] -right-5 bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 h-[33px] w-10">
-              <section className=" show-on-hover-right">
+              <div className="hover-el show-on-hover-right">
                 <p>Combat </p>
-              </section>
+              </div>
               <img
                 className="h-[20px] "
                 src="./icons/fighting.png"
                 alt="combat"
               />
-              <div className="text-white ">90</div>
+              <span className="text-white ">90</span>
             </div>
             <div className="hover-parent flex justify-center items-center absolute top-[58%] -right-5 bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 h-[33px] w-10">
-              <section className=" show-on-hover-right">
+              <div className="hover-el show-on-hover-right">
                 <p>Speed </p>
-              </section>
+              </div>
               <img
                 className="h-[20px] "
                 src="./icons/running.png"
                 alt="speed"
               />
-              <div className="text-white ">29</div>
+              <span className="text-white ">29</span>
             </div>
           </Typography>
         </CardBody>
