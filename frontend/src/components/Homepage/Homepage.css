@@ -1,41 +1,30 @@
-.show-on-hover {
+.hover-el {
   opacity: 0;
   position: absolute;
   color: rgb(129, 234, 130);
-  background-color: black;
-  right: 40px;
-  width: 10s0px;
-  padding: 14px 3px;
+  width: 100px;
   visibility: hidden;
-  border-radius: 20px;
+  padding: 14px 3px;
   border: 1px solid rgb(129, 234, 130);
   transition: all 0.8s, 0.5s;
   font-weight: bold;
+  border-radius: 20px;
+  background-color: black;
 }
-.hover-parent:hover .show-on-hover,
+.show-on-hover-left {
+  right: 40px;
+}
+.show-on-hover-right {
+  left: 40px;
+}
+.hover-parent:hover .show-on-hover-left,
 .hover-parent:hover .show-on-hover-right {
-  display: block;
   opacity: 1;
   visibility: visible;
 }
 
-.show-on-hover-right {
-  opacity: 0;
-  position: absolute;
-  color: rgb(129, 234, 130);
-  background-color: black;
-  left: 40px;
-  width: 10s0px;
-  padding: 14px 5px;
-  visibility: hidden;
-  border-radius: 20px;
-  border: 1px solid rgb(129, 234, 130);
-  transition: all 0.8s, 0.5s;
-  font-weight: bold;
-}
-
 @media only screen and (max-width: 600px) {
-  .hover-parent:active .show-on-hover,
+  .hover-parent:active .show-on-hover-left,
   .hover-parent:active .show-on-hover-right {
     display: block;
     opacity: 1;
