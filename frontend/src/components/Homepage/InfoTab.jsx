@@ -2,7 +2,7 @@ import React from "react";
 
 function InfoTab() {
   return (
-    <div className="w-screen h-1/3 flex flex-col justify-between items-center">
+    <div className="w-screen h-1/3 flex flex-col justify-start items-center">
       <h3 className="w-screen text-center text-[#54EB75]">
         {"info".toUpperCase()}
       </h3>
