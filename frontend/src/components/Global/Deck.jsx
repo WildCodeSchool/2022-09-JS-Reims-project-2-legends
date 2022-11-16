@@ -32,12 +32,12 @@ Deck.propTypes = {
       id: PropTypes.number,
       name: PropTypes.string,
       powerstats: PropTypes.shape({
-        intelligence: PropTypes.number,
-        strength: PropTypes.number,
-        speed: PropTypes.number,
-        durability: PropTypes.number,
-        power: PropTypes.number,
-        combat: PropTypes.number,
+        intelligence: PropTypes.string,
+        strength: PropTypes.string,
+        speed: PropTypes.string,
+        durability: PropTypes.string,
+        power: PropTypes.string,
+        combat: PropTypes.string,
       }),
       image: PropTypes.shape({ url: PropTypes.string }),
     })
