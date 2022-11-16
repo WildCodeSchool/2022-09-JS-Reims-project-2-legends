@@ -30,4 +30,7 @@
     opacity: 1;
     visibility: visible;
   }
+  .separator-line {
+    margin-top: -15%;
+  }
 }

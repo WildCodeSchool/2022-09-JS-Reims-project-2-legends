@@ -13,7 +13,7 @@ function HomePage({ play }) {
       <img className="logo" src={logo} alt="Legends logo" />
       <br />
       <div className="w-screen h-1/6 list-none flex flex-col justify-around items-center">
-        <div className="w-1/2 h-0.5 bg-[#54EB75] rounded-sm" />
+        <div className="separator-line w-1/2 h-0.5 bg-[#54EB75] rounded-sm" />
         <ul className="w-screen list-none flex justify-evenly text-[#54EB75]">
           <li
             aria-hidden="true"
