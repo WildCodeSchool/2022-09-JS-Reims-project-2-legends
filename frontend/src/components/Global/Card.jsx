@@ -8,10 +8,13 @@ import {
 } from "@material-tailwind/react";
 
 export default function Card({ character, select }) {
-  const { intelligence, power, strength, durability, speed, combat } =
-    character.powerstats;
-  const image = character.image.url;
-  const { name } = character;
+  const {
+    name,
+    image: { url },
+  } = character;
+  const listStats = Object.entries(character.powerstats);
+  const style =
+    "flex flex-col justify-center items-center shadow-lg bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 w-12 h-16 z-10 -translate-y-1/2";
 
   return (
     <button
