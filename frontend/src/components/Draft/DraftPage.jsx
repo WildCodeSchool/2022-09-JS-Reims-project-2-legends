@@ -7,10 +7,10 @@ import PlayersSelection from "./PlayersSelection";
 export default function DraftPage({
   draftRound,
   setDraftRound,
-  cardSelected,
-  setCardSelected,
-  cardComputer,
-  setCardComputer,
+  playerOneDeck,
+  setPlayerOneDeck,
+  playerTwoDeck,
+  setPlayerTwoDeck,
   setActivePage,
 }) {
   const [characters, setCharacters] = useState([]);
@@ -48,10 +48,10 @@ export default function DraftPage({
     <Loader />
   ) : (
     <PlayersSelection
-      cardSelected={cardSelected}
-      setCardSelected={setCardSelected}
-      cardComputer={cardComputer}
-      setCardComputer={setCardComputer}
+      playerOneDeck={playerOneDeck}
+      setPlayerOneDeck={setPlayerOneDeck}
+      playerTwoDeck={playerTwoDeck}
+      setPlayerTwoDeck={setPlayerTwoDeck}
       characters={characters}
       setCharacters={setCharacters}
       draftRound={draftRound}
@@ -64,8 +64,9 @@ export default function DraftPage({
 DraftPage.propTypes = {
   draftRound: PropTypes.number.isRequired,
   setDraftRound: PropTypes.func.isRequired,
-  cardSelected: PropTypes.arrayOf(
+  playerOneDeck: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.string,
       name: PropTypes.string,
       powerstats: PropTypes.shape({
         intelligence: PropTypes.string,
@@ -75,12 +76,13 @@ DraftPage.propTypes = {
         power: PropTypes.string,
         combat: PropTypes.string,
       }),
-      image: PropTypes.shape({ url: PropTypes.string }),
+      image: PropTypes.PropTypes.shape({ url: PropTypes.string }),
     })
   ).isRequired,
-  setCardSelected: PropTypes.func.isRequired,
-  cardComputer: PropTypes.arrayOf(
+  setPlayerOneDeck: PropTypes.func.isRequired,
+  playerTwoDeck: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.string,
       name: PropTypes.string,
       powerstats: PropTypes.shape({
         intelligence: PropTypes.string,
@@ -90,9 +92,9 @@ DraftPage.propTypes = {
         power: PropTypes.string,
         combat: PropTypes.string,
       }),
-      image: PropTypes.shape({ url: PropTypes.string }),
+      image: PropTypes.PropTypes.shape({ url: PropTypes.string }),
     })
   ).isRequired,
-  setCardComputer: PropTypes.func.isRequired,
+  setPlayerTwoDeck: PropTypes.func.isRequired,
   setActivePage: PropTypes.func.isRequired,
 };
