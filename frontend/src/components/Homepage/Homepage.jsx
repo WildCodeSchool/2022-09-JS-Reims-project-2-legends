@@ -1,8 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Navbar from "./Navbar";
+import logo from "../../assets/legends-logo.png";
+import InfoTab from "./InfoTab";
+import RulesTab from "./RulesTab";
+import CardsTab from "./CardsTab";
 
-function HomePage({ play }) {
+function HomePage({ play, setTab, tab }) {
   return (
     <div className="h-screen w-screen flex flex-col justify-evenly items-center text-yellow-500">
       <h1 className="text-2xl text-white">LEGENDS</h1>
@@ -52,5 +56,7 @@ function HomePage({ play }) {
 }
 HomePage.propTypes = {
   play: PropTypes.func.isRequired,
+  setTab: PropTypes.func.isRequired,
+  tab: PropTypes.string.isRequired,
 };
 export default HomePage;
