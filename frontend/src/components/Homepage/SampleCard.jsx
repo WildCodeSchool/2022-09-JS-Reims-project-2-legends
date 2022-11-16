@@ -22,7 +22,7 @@ export default function SampleCard() {
         <CardBody className="text-center p-0">
           <Typography
             variant="h4"
-            color="blue-gray "
+            color="blue-gray"
             className="mb-2  text-yellow-500"
           >
             {sampleCardData.name}
