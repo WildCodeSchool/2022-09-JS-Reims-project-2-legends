@@ -10,18 +10,16 @@ Start the game and press PLAY
 ### RULES
 
 - Choisis ta team de héros pour attaquer et défendre contre des Teams de vilains.
-- A chaque partie, tu commences avec un deck de 5 cartes et l’adversaire aussi.
+- A chaque partie, toi et ton advensaire choisissez vos cartes avec un Draft jusqu'a atteindre 6 cartes.
 - Utilises les forces de tes héros pour vaincre l’adversaire.
-- Sers toi des boutons attaquer et défendre.
-- Si un des héros ou vilains meurt, la carte disparaît de ton deck.
-- Le premier à arriver à zéro carte perd la partie.
+- Posez les cartes sur le board et validez vos selections, la carte avec la meilleur stat gagne.
+- Les deux cartes sont défaussées et le gagnant du combat marque un point.
 
 
 ### Available Commands
 
-- Play
-- Attaque
-- Défendre
+- Choose your Heroes
+- Validate your selection
 
 ### Built With
 
