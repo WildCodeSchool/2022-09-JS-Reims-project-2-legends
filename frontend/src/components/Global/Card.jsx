@@ -66,6 +66,17 @@ export default function Card({ character, select }) {
 }
 
 Card.propTypes = {
-  character: PropTypes.objectOf(PropTypes.string).isRequired,
+  character: PropTypes.shape({
+    name: PropTypes.string,
+    image: PropTypes.shape({ url: PropTypes.string }),
+    powerstats: PropTypes.shape({
+      intelligence: PropTypes.string,
+      strength: PropTypes.string,
+      speed: PropTypes.string,
+      durability: PropTypes.string,
+      power: PropTypes.string,
+      combat: PropTypes.string,
+    }),
+  }).isRequired,
   select: PropTypes.func.isRequired,
 };
