@@ -35,7 +35,7 @@ export default function Card({ character, select }) {
           >
             {name}
           </Typography>
-          <Typography className="grid grid-cols-2" textGradient>
+          <Typography>
             {listStats.map((stat) => {
               const statName = stat[0];
               const statValue = stat[1];
@@ -66,23 +66,6 @@ export default function Card({ character, select }) {
 }
 
 Card.propTypes = {
-  character: PropTypes.arrayOf(
-    PropTypes.objectOf(
-      PropTypes.shape({
-        name: PropTypes.string,
-        powerstats: PropTypes.objectOf(
-          PropTypes.shape({
-            intelligence: PropTypes.number,
-            strength: PropTypes.number,
-            speed: PropTypes.number,
-            durability: PropTypes.number,
-            power: PropTypes.number,
-            combat: PropTypes.number,
-          })
-        ),
-        image: PropTypes.shape({ url: PropTypes.string }),
-      })
-    )
-  ).isRequired,
+  character: PropTypes.objectOf(PropTypes.string).isRequired,
   select: PropTypes.func.isRequired,
 };
