@@ -21,3 +21,24 @@ function MiniCardHover({ dataDeck, position }) {
     </div>
   );
 }
+MiniCardHover.propTypes = {
+  dataDeck: PropTypes.arrayOf(
+    PropTypes.objectOf(
+      PropTypes.shape({
+        powerstats: PropTypes.objectOf(
+          PropTypes.shape({
+            intelligence: PropTypes.number,
+            strength: PropTypes.number,
+            speed: PropTypes.number,
+            durability: PropTypes.number,
+            power: PropTypes.number,
+            combat: PropTypes.number,
+          })
+        ),
+      })
+    )
+  ).isRequired,
+  position: PropTypes.string.isRequired,
+};
+
+export default MiniCardHover;
