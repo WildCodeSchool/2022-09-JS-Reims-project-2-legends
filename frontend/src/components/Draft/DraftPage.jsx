@@ -17,16 +17,17 @@ export default function DraftPage({
 
   const [isLoading, setLoading] = useState(false);
   const API_KEY = "4070424506516370";
-  const [validIds, setValidIds] = useState([
-    644, 720, 306, 491, 165, 156, 267, 542, 405, 370, 284, 601, 309, 522, 731,
-    105, 609, 346, 659, 332, 620, 149, 717, 106, 498, 273, 430, 414, 401, 687,
-    550, 570, 472, 655, 278, 708, 136, 230, 457, 70, 38, 95, 31, 93,
-  ]);
+  const [validIds, setValidIds] = useState(
+    [
+      644, 720, 306, 491, 165, 156, 267, 542, 405, 370, 284, 601, 309, 522, 731,
+      105, 609, 346, 659, 332, 620, 149, 717, 106, 498, 273, 430, 414, 401, 687,
+      550, 570, 472, 655, 278, 708, 136, 230, 457, 70, 38, 95, 31, 93,
+    ].sort(() => Math.random() - 0.5)
+  );
 
   const fetchData = () => {
     const promises = validIds
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 3)
+      .slice(draftRound * 3, (draftRound + 1) * 3)
       .map((id) =>
         axios.get(`https://www.superheroapi.com/api.php/${API_KEY}/${id}`)
       );
