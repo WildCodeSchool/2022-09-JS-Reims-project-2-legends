@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import MiniCard from "./MiniCard";
-import arrayPropType from "../propTypes";
+import { cardArrayPropTypes } from "../../propTypes";
 
 function Deck({ deck, position, setPlayerCardPicked, validPlayerSelection }) {
   return (
@@ -28,7 +28,7 @@ function Deck({ deck, position, setPlayerCardPicked, validPlayerSelection }) {
 }
 
 Deck.propTypes = {
-  deck: arrayPropType.isRequired,
+  deck: cardArrayPropTypes.isRequired,
   position: PropTypes.string.isRequired,
   setPlayerCardPicked: PropTypes.func.isRequired,
   validPlayerSelection: PropTypes.bool.isRequired,

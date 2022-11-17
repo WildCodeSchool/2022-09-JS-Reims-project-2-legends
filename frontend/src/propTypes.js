@@ -15,4 +15,4 @@ const cardPropTypes = PropTypes.shape({
 });
 const cardArrayPropTypes = PropTypes.arrayOf(cardPropTypes);
 
-export default { cardPropTypes, cardArrayPropTypes };
+export { cardPropTypes, cardArrayPropTypes };
