@@ -23,8 +23,8 @@ export default function battle(
 
       setPlayerOneCardPicked(null);
       setPlayerTwoCardPicked(null);
-      setValidPlayerOneSelection(false);
-      setValidPlayerTwoSelection(false);
+      setValidPlayerOneSelection(true);
+      setValidPlayerTwoSelection(true);
     }, 2000);
   }
 }
