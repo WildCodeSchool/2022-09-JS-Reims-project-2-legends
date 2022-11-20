@@ -36,7 +36,11 @@ export default function Card({ character, select, cardsTab, mobileCombat }) {
               {listStats.map((stat) => {
                 const statName = stat[0];
                 const statValue = stat[1];
-                const statNameShort = statName.slice(0, 3).toUpperCase();
+                const statNameShort = statName
+                  .slice(0, 3)
+                  .toUpperCase()
+                  .replace("SPE", "SPD")
+                  .replace("COM", "CBT");
                 return (
                   <dt
                     key={statName}
@@ -44,20 +48,18 @@ export default function Card({ character, select, cardsTab, mobileCombat }) {
                   ${style} 
                   ${statName === "intelligence" && "absolute top-[0%]"}
                   ${
-                    statName === "power" &&
+                    statName === "speed" &&
                     "absolute top-[50%] -translate-y-1/2"
                   }
-                  ${statName === "durability" && "absolute bottom-[0%]"}
+                  ${statName === "power" && "absolute bottom-[0%]"}
                   ${statName === "strength" && "absolute top-[0%] right-0"}
                   ${
-                    statName === "speed" &&
+                    statName === "durability" &&
                     "absolute top-[50%] right-0 -translate-y-1/2"
                   }
                   ${statName === "combat" && "absolute bottom-[0%] right-0"}`}
                   >
-                    <div className="text-[#54EB75]">
-                      {statNameShort === "SPE" ? "SPD" : statNameShort}
-                    </div>
+                    <div className="text-[#54EB75]">{statNameShort}</div>
                     <div className="text-white ">{statValue}</div>
                   </dt>
                 );

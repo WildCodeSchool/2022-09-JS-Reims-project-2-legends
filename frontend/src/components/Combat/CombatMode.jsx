@@ -22,8 +22,8 @@ function CombatMode({
   setDraftRound(1);
   const [playerOneCardPicked, setPlayerOneCardPicked] = useState(null);
   const [playerTwoCardPicked, setPlayerTwoCardPicked] = useState(null);
-  const [validPlayerOneSelection, setValidPlayerOneSelection] = useState(false);
-  const [validPlayerTwoSelection, setValidPlayerTwoSelection] = useState(false);
+  const [validPlayerOneSelection, setValidPlayerOneSelection] = useState(true);
+  const [validPlayerTwoSelection, setValidPlayerTwoSelection] = useState(true);
   const [scorePlayerOne, setscorePlayerOne] = useState(0);
   const [scorePlayerTwo, setscorePlayerTwo] = useState(0);
   const [stat, setStat] = useState(null);

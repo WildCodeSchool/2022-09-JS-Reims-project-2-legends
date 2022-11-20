@@ -24,7 +24,7 @@ export default function MiniCard({
       <button
         type="button"
         className="rounded-[10%]"
-        onClick={() => !validPlayerSelection && selectCardToPlay()}
+        onClick={() => validPlayerSelection && selectCardToPlay()}
       >
         <figure
           className="border-[#54EB75] border-solid border-2 h-auto max-w-[90px] rounded-[10%] relative minicard"
