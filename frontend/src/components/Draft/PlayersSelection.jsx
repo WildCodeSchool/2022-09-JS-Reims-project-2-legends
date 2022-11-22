@@ -17,8 +17,8 @@ export default function PlayersSelection({
     <div className="flex flex-col h-screen">
       <div className="text-yellow-700 h-[20%] bg-black">
         <div className="grid grid-cols-6 h-[90%] w-full overflow-hidden">
-          {playerTwoDeck.map((el) => (
-            <MiniCard dataDeck={el} />
+          {playerTwoDeck.map((character) => (
+            <MiniCard key={character.id} character={character} />
           ))}
         </div>
         <h1 className="text-center h-[10%]">Opponent Deck</h1>
@@ -57,8 +57,8 @@ export default function PlayersSelection({
       <section className="text-yellow-700 h-[20%] bg-black">
         <h1 className="text-center h-[10%]">My deck</h1>
         <div className="grid grid-cols-6 h-[90%]">
-          {playerOneDeck.map((el) => (
-            <MiniCard dataDeck={el} />
+          {playerOneDeck.map((character) => (
+            <MiniCard key={character.id} character={character} />
           ))}
         </div>
       </section>
