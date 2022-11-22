@@ -9,7 +9,10 @@ export default function DraftPage({ surrender }) {
   const [playerTwoDeck, setPlayerTwoDeck] = useState([]);
   const [playerOneCard, setPlayerOneCard] = useState();
   const [playerTwoCard, setPlayerTwoCard] = useState();
+  const [playerOneScore, setPlayerOneScore] = useState(0);
+  const [playerTwoScore, setPlayerTwoScore] = useState(0);
   const [decksReady, setDecksReady] = useState(false);
+  const [frozen, setFrozen] = useState(false);
 
   useEffect(() => {
     if (playerOneDeck.length === 6 && playerTwoDeck.length === 6) {
@@ -26,7 +29,7 @@ export default function DraftPage({ surrender }) {
               key={character.id}
               character={character}
               selectCardToPlay={
-                decksReady
+                decksReady && !frozen
                   ? () => {
                       const newPlayerTwoDeck = playerTwoDeck.filter(
                         (cardInDeck) => cardInDeck.id !== character.id
@@ -52,7 +55,24 @@ export default function DraftPage({ surrender }) {
           Home
         </button>
         {decksReady ? (
-          <Fight playerOneCard={playerOneCard} playerTwoCard={playerTwoCard} />
+          <>
+            <p>{playerOneScore}</p>
+            <Fight
+              playerOneCard={playerOneCard}
+              playerTwoCard={playerTwoCard}
+              setFrozen={(newFrozen) => {
+                if (newFrozen === false) {
+                  // vider la table
+                  setPlayerOneCard();
+                  setPlayerTwoCard();
+                }
+                setFrozen(newFrozen);
+              }}
+              setPlayerOneScore={setPlayerOneScore}
+              setPlayerTwoScore={setPlayerTwoScore}
+            />
+            <p>{playerTwoScore}</p>
+          </>
         ) : (
           <Draft
             setPlayerOneDeck={setPlayerOneDeck}
@@ -69,7 +89,7 @@ export default function DraftPage({ surrender }) {
               key={character.id}
               character={character}
               selectCardToPlay={
-                decksReady
+                decksReady && !frozen
                   ? () => {
                       const newPlayerOneDeck = playerOneDeck.filter(
                         (cardInDeck) => cardInDeck.id !== character.id
