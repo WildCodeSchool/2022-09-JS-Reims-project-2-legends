@@ -18,5 +18,8 @@
   "devDependencies": {
     "concurrently": "^7.0.0",
     "husky": "^7.0.0"
+  },
+  "dependencies": {
+    "@formkit/auto-animate": "^1.0.0-beta.5"
   }
 }
