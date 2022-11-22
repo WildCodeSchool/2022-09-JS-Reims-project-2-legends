@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Fight from "../components/Fight/Fight";
 import Draft from "../components/Draft/Draft";
@@ -9,8 +9,13 @@ export default function DraftPage({ surrender }) {
   const [playerTwoDeck, setPlayerTwoDeck] = useState([]);
   const [playerOneCard, setPlayerOneCard] = useState();
   const [playerTwoCard, setPlayerTwoCard] = useState();
+  const [decksReady, setDecksReady] = useState(false);
 
-  const decksReady = playerOneDeck.length === 6 && playerTwoDeck.length === 6;
+  useEffect(() => {
+    if (playerOneDeck.length === 6 && playerTwoDeck.length === 6) {
+      setDecksReady(true);
+    }
+  }, [playerOneDeck, playerTwoDeck]);
 
   return (
     <div className="flex flex-col h-screen">
@@ -23,6 +28,15 @@ export default function DraftPage({ surrender }) {
               selectCardToPlay={
                 decksReady
                   ? () => {
+                      const newPlayerTwoDeck = playerTwoDeck.filter(
+                        (cardInDeck) => cardInDeck.id !== character.id
+                      );
+
+                      if (playerTwoCard) {
+                        newPlayerTwoDeck.push(playerTwoCard);
+                      }
+
+                      setPlayerTwoDeck(newPlayerTwoDeck);
                       setPlayerTwoCard(character);
                     }
                   : null
@@ -57,6 +71,15 @@ export default function DraftPage({ surrender }) {
               selectCardToPlay={
                 decksReady
                   ? () => {
+                      const newPlayerOneDeck = playerOneDeck.filter(
+                        (cardInDeck) => cardInDeck.id !== character.id
+                      );
+
+                      if (playerOneCard) {
+                        newPlayerOneDeck.push(playerOneCard);
+                      }
+
+                      setPlayerOneDeck(newPlayerOneDeck);
                       setPlayerOneCard(character);
                     }
                   : null
