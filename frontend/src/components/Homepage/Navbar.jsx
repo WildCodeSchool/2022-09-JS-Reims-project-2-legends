@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+// eslint-disable-next-line import/no-unresolved
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 import CardsTab from "./CardsTab";
 import RulesTab from "./RulesTab";
 import InfoTab from "./InfoTab";
@@ -6,6 +8,7 @@ import InfoTab from "./InfoTab";
 function Navbar() {
   const navElements = ["Cards", "Rules", "Info"];
   const [tab, setTab] = useState("rules");
+  const [parent] = useAutoAnimate();
   return (
     <>
       <nav className="w-screen h-1/6 list-none flex flex-col justify-around items-center">
@@ -24,9 +27,11 @@ function Navbar() {
         </ul>
         <div className="w-1/2 h-0.5 bg-[#54EB75] rounded-sm" />
       </nav>
-      {tab === "rules" && <RulesTab />}
-      {tab === "cards" && <CardsTab />}
-      {tab === "info" && <InfoTab />}
+      <div ref={parent}>
+        {tab === "rules" && <RulesTab />}
+        {tab === "cards" && <CardsTab />}
+        {tab === "info" && <InfoTab />}
+      </div>
     </>
   );
 }
