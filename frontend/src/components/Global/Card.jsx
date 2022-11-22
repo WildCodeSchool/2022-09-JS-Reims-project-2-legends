@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@material-tailwind/react";
 
-export default function Card({ character, select }) {
+export default function Card({ character, onClick }) {
   const {
     name,
     image: { url },
@@ -17,11 +17,10 @@ export default function Card({ character, select }) {
     "flex flex-col justify-center items-center shadow-lg bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 w-12 h-16 z-10 -translate-y-1/2";
 
   return (
-    <div
+    <button
+      type="button"
       className="flex justify-center box-content w-52"
-      onClick={select}
-      onKeyUp={select}
-      aria-hidden="true"
+      onClick={onClick}
     >
       <MTCard className="w-48 h-80 bg-black m-4 relatives border-2 border-black border-solid ">
         <CardHeader floated={false} className="-m-0">
@@ -62,7 +61,7 @@ export default function Card({ character, select }) {
           </Typography>
         </CardBody>
       </MTCard>
-    </div>
+    </button>
   );
 }
 
@@ -79,5 +78,5 @@ Card.propTypes = {
       combat: PropTypes.string,
     }),
   }).isRequired,
-  select: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
