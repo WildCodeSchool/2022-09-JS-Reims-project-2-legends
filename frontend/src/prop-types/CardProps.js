@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
-const cardPropTypes = PropTypes.shape({
-  id: PropTypes.number,
+const CardProps = PropTypes.shape({
+  id: PropTypes.string,
   name: PropTypes.string,
   powerstats: PropTypes.shape({
     intelligence: PropTypes.string,
@@ -13,6 +13,5 @@ const cardPropTypes = PropTypes.shape({
   }),
   image: PropTypes.shape({ url: PropTypes.string }),
 });
-const cardArrayPropTypes = PropTypes.arrayOf(cardPropTypes);
 
-export { cardPropTypes, cardArrayPropTypes };
+export default CardProps;

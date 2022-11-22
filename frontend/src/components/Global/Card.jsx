@@ -6,6 +6,7 @@ import {
   CardBody,
   Typography,
 } from "@material-tailwind/react";
+import CardProps from "../../prop-types/CardProps";
 
 export default function Card({ character, onClick }) {
   const {
@@ -66,17 +67,10 @@ export default function Card({ character, onClick }) {
 }
 
 Card.propTypes = {
-  character: PropTypes.shape({
-    name: PropTypes.string,
-    image: PropTypes.shape({ url: PropTypes.string }),
-    powerstats: PropTypes.shape({
-      intelligence: PropTypes.string,
-      strength: PropTypes.string,
-      speed: PropTypes.string,
-      durability: PropTypes.string,
-      power: PropTypes.string,
-      combat: PropTypes.string,
-    }),
-  }).isRequired,
-  onClick: PropTypes.func.isRequired,
+  character: CardProps.isRequired,
+  onClick: PropTypes.func,
+};
+
+Card.defaultProps = {
+  onClick: null,
 };
