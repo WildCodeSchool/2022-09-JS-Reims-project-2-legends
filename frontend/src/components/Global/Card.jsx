@@ -30,7 +30,7 @@ export default function Card({ character, select }) {
         <CardBody className="text-center p-0">
           <Typography
             variant="h4"
-            color="blue-gray "
+            color="blue-gray"
             className="mb-2  text-yellow-500"
           >
             {name}
@@ -41,7 +41,8 @@ export default function Card({ character, select }) {
               const statValue = stat[1];
               const statNameShort = statName.slice(0, 3).toUpperCase();
               return (
-                <div
+                <span
+                  key={statName}
                   className={`
                 ${style} 
                 ${statName === "intelligence" && "absolute top-[0%] -left-4"}
@@ -51,11 +52,11 @@ export default function Card({ character, select }) {
                 ${statName === "speed" && "absolute top-[38%] -right-4"}
                 ${statName === "combat" && "absolute top-[70%] -right-4"}`}
                 >
-                  <div className="text-yellow-600">
+                  <span className="text-yellow-600">
                     {statNameShort === "SPE" ? "SPD" : statNameShort}
-                  </div>
-                  <div className="text-white">{statValue}</div>
-                </div>
+                  </span>
+                  <span className="text-white">{statValue}</span>
+                </span>
               );
             })}
           </Typography>
