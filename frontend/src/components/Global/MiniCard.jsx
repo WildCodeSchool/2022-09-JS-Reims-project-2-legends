@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function MiniCard({ dataDeck, selectCardToPlay }) {
-  const image = dataDeck.image.url;
+export default function MiniCard({ character, selectCardToPlay }) {
+  const image = character.image.url;
   return (
     <div className="h-full w-full flex flex-col items-center justify-center overflow-hidden">
       <div className="border-pink-900 border-solid border-4 w-[75%] rounded-[3xl] aspect-auto">
@@ -19,8 +19,12 @@ export default function MiniCard({ dataDeck, selectCardToPlay }) {
 }
 
 MiniCard.propTypes = {
-  dataDeck: PropTypes.shape({
+  character: PropTypes.shape({
     image: PropTypes.shape({ url: PropTypes.string }),
   }).isRequired,
-  selectCardToPlay: PropTypes.func.isRequired,
+  selectCardToPlay: PropTypes.func,
+};
+
+MiniCard.defaultProps = {
+  selectCardToPlay: null,
 };
