@@ -4,18 +4,12 @@ import PropTypes from "prop-types";
 import Loader from "./Loader";
 import PlayersSelection from "./PlayersSelection";
 
-export default function DraftPage({
-  draftRound,
-  setDraftRound,
-  playerOneDeck,
-  setPlayerOneDeck,
-  playerTwoDeck,
-  setPlayerTwoDeck,
-  setActivePage,
-}) {
+export default function DraftPage({ setActivePage }) {
+  const [draftRound, setDraftRound] = useState(1);
+
   const [characters, setCharacters] = useState([]);
 
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(true);
   const API_KEY = "4070424506516370";
   const [validIds, setValidIds] = useState(
     [
@@ -49,10 +43,6 @@ export default function DraftPage({
     <Loader />
   ) : (
     <PlayersSelection
-      playerOneDeck={playerOneDeck}
-      setPlayerOneDeck={setPlayerOneDeck}
-      playerTwoDeck={playerTwoDeck}
-      setPlayerTwoDeck={setPlayerTwoDeck}
       characters={characters}
       setCharacters={setCharacters}
       draftRound={draftRound}
@@ -63,39 +53,5 @@ export default function DraftPage({
 }
 
 DraftPage.propTypes = {
-  draftRound: PropTypes.number.isRequired,
-  setDraftRound: PropTypes.func.isRequired,
-  playerOneDeck: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-      powerstats: PropTypes.shape({
-        intelligence: PropTypes.string,
-        strength: PropTypes.string,
-        speed: PropTypes.string,
-        durability: PropTypes.string,
-        power: PropTypes.string,
-        combat: PropTypes.string,
-      }),
-      image: PropTypes.PropTypes.shape({ url: PropTypes.string }),
-    })
-  ).isRequired,
-  setPlayerOneDeck: PropTypes.func.isRequired,
-  playerTwoDeck: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-      powerstats: PropTypes.shape({
-        intelligence: PropTypes.string,
-        strength: PropTypes.string,
-        speed: PropTypes.string,
-        durability: PropTypes.string,
-        power: PropTypes.string,
-        combat: PropTypes.string,
-      }),
-      image: PropTypes.PropTypes.shape({ url: PropTypes.string }),
-    })
-  ).isRequired,
-  setPlayerTwoDeck: PropTypes.func.isRequired,
   setActivePage: PropTypes.func.isRequired,
 };
