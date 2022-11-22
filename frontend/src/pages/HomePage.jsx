@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Navbar from "./Navbar";
-import logo from "../../assets/legends-logo.png";
+import Navbar from "../components/HomePage/Navbar";
+import logo from "../assets/legends-logo.png";
 
 function HomePage({ play }) {
   return (
