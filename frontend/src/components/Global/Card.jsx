@@ -1,82 +1,89 @@
-import PropTypes from "prop-types";
 import React from "react";
-import {
-  Card as MTCard,
-  CardHeader,
-  CardBody,
-  Typography,
-} from "@material-tailwind/react";
+import PropTypes from "prop-types";
+import "./Card.css";
+import { cardPropTypes } from "../cardPropTypes";
 
-export default function Card({ character, select }) {
+export default function Card({ character, select, cardsTab, mobileCombat }) {
   const {
     name,
     image: { url },
   } = character;
   const listStats = Object.entries(character.powerstats);
   const style =
-    "flex flex-col justify-center items-center shadow-lg bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 w-12 h-16 z-10 -translate-y-1/2";
+    "flex flex-col justify-center items-center shadow-lg bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 z-10 w-9 h-9 text-xs md:w-12 md:h-12 md:text-base ";
+  const nestedCondContainer = mobileCombat
+    ? "w-30 h-44 md:w-48 md:h-80 card"
+    : "md:w-48 md:h-80 card";
+  const nestedCondImage = mobileCombat
+    ? "h-32 md:max-w-full md:h-auto"
+    : "md:max-w-full md:h-auto";
 
   return (
-    <div
-      className="flex justify-center box-content w-52"
-      onClick={select}
-      onKeyUp={select}
-      aria-hidden="true"
-    >
-      <MTCard className="w-48 h-80 bg-black m-4 relatives border-2 border-black border-solid ">
-        <CardHeader floated={false} className="-m-0">
-          <img className="" src={url} alt={name} />
-        </CardHeader>
-        <CardBody className="text-center p-0">
-          <Typography
-            variant="h4"
-            color="blue-gray "
-            className="mb-2  text-yellow-500"
-          >
-            {name}
-          </Typography>
-          <Typography>
-            {listStats.map((stat) => {
-              const statName = stat[0];
-              const statValue = stat[1];
-              const statNameShort = statName.slice(0, 3).toUpperCase();
-              return (
-                <div
-                  className={`
-                ${style} 
-                ${statName === "intelligence" && "absolute top-[0%] -left-4"}
-                ${statName === "power" && "absolute top-[38%] -left-4"}
-                ${statName === "durability" && "absolute top-[70%] -left-4"}
-                ${statName === "strength" && "absolute top-[0%] -right-4"}
-                ${statName === "speed" && "absolute top-[38%] -right-4"}
-                ${statName === "combat" && "absolute top-[70%] -right-4"}`}
-                >
-                  <div className="text-yellow-600">
-                    {statNameShort === "SPE" ? "SPD" : statNameShort}
-                  </div>
-                  <div className="text-white">{statValue}</div>
-                </div>
-              );
-            })}
-          </Typography>
-        </CardBody>
-      </MTCard>
-    </div>
+    <button type="button" onClick={select}>
+      <figure
+        className={`flex flex-col bg-clip-border rounded-xl shadow-md bg-black relative border-2 border-black border-solid ${
+          cardsTab ? "w-30 h-50" : nestedCondContainer
+        }`}
+      >
+        <figcaption className="relative bg-clip-border rounded-xl shadow-lg">
+          <img
+            className={cardsTab ? "h-44" : nestedCondImage}
+            src={url}
+            alt={name}
+          />
+          <figcaption className="block antialiased font-sans text-base font-light leading-relaxed text-inherit">
+            <dl>
+              {listStats.map((stat) => {
+                const statName = stat[0];
+                const statValue = stat[1];
+                const statNameShort = statName
+                  .slice(0, 3)
+                  .toUpperCase()
+                  .replace("SPE", "SPD")
+                  .replace("COM", "CBT");
+                return (
+                  <dt
+                    key={statName}
+                    className={`
+                  ${style} 
+                  ${statName === "intelligence" && "absolute top-[0%]"}
+                  ${
+                    statName === "speed" &&
+                    "absolute top-[50%] -translate-y-1/2"
+                  }
+                  ${statName === "power" && "absolute bottom-[0%]"}
+                  ${statName === "strength" && "absolute top-[0%] right-0"}
+                  ${
+                    statName === "durability" &&
+                    "absolute top-[50%] right-0 -translate-y-1/2"
+                  }
+                  ${statName === "combat" && "absolute bottom-[0%] right-0"}`}
+                  >
+                    <div className="text-[#54EB75]">{statNameShort}</div>
+                    <div className="text-white ">{statValue}</div>
+                  </dt>
+                );
+              })}
+            </dl>
+          </figcaption>
+        </figcaption>
+        <h1 className="block font-sans text-base font-semibold leading-snug mb-2 text-[#54EB75] text-center h-12 w-30 md-w-48 md:text-2xl">
+          {name}
+        </h1>
+      </figure>
+    </button>
   );
 }
 
 Card.propTypes = {
-  character: PropTypes.shape({
-    name: PropTypes.string,
-    image: PropTypes.shape({ url: PropTypes.string }),
-    powerstats: PropTypes.shape({
-      intelligence: PropTypes.string,
-      strength: PropTypes.string,
-      speed: PropTypes.string,
-      durability: PropTypes.string,
-      power: PropTypes.string,
-      combat: PropTypes.string,
-    }),
-  }).isRequired,
-  select: PropTypes.func.isRequired,
+  character: cardPropTypes.isRequired,
+  select: PropTypes.func,
+  cardsTab: PropTypes.bool,
+  mobileCombat: PropTypes.bool,
+};
+
+Card.defaultProps = {
+  select: null,
+  cardsTab: false,
+  mobileCombat: false,
 };
