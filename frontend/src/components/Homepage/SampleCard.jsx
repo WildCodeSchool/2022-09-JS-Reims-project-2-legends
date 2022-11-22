@@ -27,25 +27,24 @@ export default function SampleCard() {
             {sampleCardData.name}
           </Typography>
           <Typography className="grid grid-cols-2" textGradient>
-            <div className="flex justify-center items-center absolute top-[0%] -left-4 shadow-lg bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 w-8 h-8">
-              <div className="text-white ">{sampleCardData.intelligence}</div>
-            </div>
-            <div className="flex justify-center items-center absolute top-[38%] -left-4 shadow-lg bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 w-8 h-8">
-              <div className="text-white ">{sampleCardData.power}</div>
-            </div>
-            <div className="flex justify-center items-center absolute top-[70%] -left-4 shadow-lg bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 w-8 h-8">
-              <div className="text-white ">{sampleCardData.durability}</div>
-            </div>
-
-            <div className="flex justify-center items-center absolute top-[0%] -right-4 bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 h-8 w-8">
-              <div className="text-white ">{sampleCardData.strength}</div>
-            </div>
-            <div className="flex justify-center items-center absolute top-[38%] -right-4 bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 h-8 w-8">
-              <div className="text-white ">{sampleCardData.speed}</div>
-            </div>
-            <div className="flex justify-center items-center absolute top-[70%] -right-4 bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 h-8 w-8">
-              <div className="text-white ">{sampleCardData.combat}</div>
-            </div>
+            <span className="text-white flex justify-center items-center absolute top-[0%] -left-4 shadow-lg bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 w-8 h-8">
+              {sampleCardData.intelligence}
+            </span>
+            <span className="text-white flex justify-center items-center absolute top-[38%] -left-4 shadow-lg bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 w-8 h-8">
+              {sampleCardData.power}
+            </span>
+            <span className="text-white flex justify-center items-center absolute top-[70%] -left-4 shadow-lg bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 w-8 h-8">
+              {sampleCardData.durability}
+            </span>
+            <span className="text-white flex justify-center items-center absolute top-[0%] -right-4 bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 h-8 w-8">
+              {sampleCardData.strength}
+            </span>
+            <span className="text-white flex justify-center items-center absolute top-[38%] -right-4 bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 h-8 w-8">
+              {sampleCardData.speed}
+            </span>
+            <span className="text-white flex justify-center items-center absolute top-[70%] -right-4 bg-black p-0.05 rounded-xl border-red-400 border-solid border-2 h-8 w-8">
+              {sampleCardData.combat}
+            </span>
           </Typography>
         </CardBody>
       </MTCard>
