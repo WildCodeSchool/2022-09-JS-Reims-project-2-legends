@@ -13,6 +13,7 @@ export default function DraftPage({ surrender, player1, player2 }) {
   const [playerOneScore, setPlayerOneScore] = useState(0);
   const [playerTwoScore, setPlayerTwoScore] = useState(0);
   const [decksReady, setDecksReady] = useState(false);
+  const [winner, setWinner] = useState();
   const [frozen, setFrozen] = useState(false);
 
   useEffect(() => {
@@ -50,11 +51,13 @@ export default function DraftPage({ surrender, player1, player2 }) {
         </div>
         <h1 className="player-name text-center">{player2}</h1>
       </div>
+      {winner && <h1 className="winner">Winner: {winner}</h1>}
 
       <div className="Container flex items-center w-screen overflow-x-scroll h-full xl:justify-center xl:ove+hidden gap-6">
         <button className="home-btn" type="button" onClick={surrender}>
           Home
         </button>
+
         {decksReady ? (
           <>
             <p className="score">
@@ -70,6 +73,17 @@ export default function DraftPage({ surrender, player1, player2 }) {
                   setPlayerTwoCard();
                 }
                 setFrozen(newFrozen);
+              }}
+              nextRound={() => {
+                if (playerOneDeck.length === 0 && playerTwoDeck.length === 0) {
+                  if (playerOneScore > playerTwoScore) {
+                    setWinner(player1);
+                  } else if (playerOneScore < playerTwoScore) {
+                    setWinner(player2);
+                  } else {
+                    setWinner("Draw");
+                  }
+                }
               }}
               setPlayerOneScore={setPlayerOneScore}
               setPlayerTwoScore={setPlayerTwoScore}

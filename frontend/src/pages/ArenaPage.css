@@ -41,3 +41,9 @@
   color: #5ee565;
   font-size: 1.5em;
 }
+
+.winner {
+  color: rgb(53, 208, 53);
+  font-size: 6em;
+  text-align: center;
+}
