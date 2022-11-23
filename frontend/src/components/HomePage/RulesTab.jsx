@@ -2,7 +2,7 @@ import React from "react";
 
 function RulesTab() {
   return (
-    <>
+    <div className="h-[80%] overflow-scroll overflow-auto scrollbar-hide">
       <h3 className="w-screen text-center text-[#54EB75]">
         {"règles".toUpperCase()}
       </h3>
@@ -28,7 +28,7 @@ function RulesTab() {
         élevée donne 1 point au joueur. La partie se termine quand les 2 joueurs
         n’ont plus de cartes.
       </section>
-    </>
+    </div>
   );
 }
 

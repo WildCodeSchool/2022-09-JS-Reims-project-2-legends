@@ -28,7 +28,7 @@ function Navbar() {
         <div className="w-1/2 h-0.5 bg-[#54EB75] rounded-sm" />
       </nav>
       <div ref={parent}>
-        {tab === "rules" && <RulesTab />}
+        {tab === "rules" && <RulesTab className="overflow-scroll h-[200px]" />}
         {tab === "cards" && <CardsTab />}
         {tab === "info" && <InfoTab />}
       </div>
