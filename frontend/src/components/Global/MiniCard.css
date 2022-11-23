@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #6bd35a;
+  margin: 5px;
+}
+
+.mini-card {
+  max-width: 18vh;
+}
