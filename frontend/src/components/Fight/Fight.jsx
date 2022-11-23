@@ -18,8 +18,9 @@ export default function Fight({
       {playerOneCard && <Card character={playerOneCard} />}
       {wantedStat ? (
         <>
-          <p>{wantedStat}</p>
+          <p className="stats">{wantedStat.toUpperCase()}</p>
           <button
+            className="next-btn"
             type="button"
             onClick={() => {
               setFrozen(false);
