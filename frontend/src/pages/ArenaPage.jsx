@@ -23,8 +23,8 @@ export default function DraftPage({ surrender }) {
 
   return (
     <div className="flex flex-col h-screen">
-      <div className="text-yellow-700 h-[20%] bg-black">
-        <div className="grid grid-cols-6 h-[90%] w-full overflow-hidden">
+      <div className="deck">
+        <div className="flex ">
           {playerTwoDeck.map((character) => (
             <MiniCard
               key={character.id}
@@ -82,9 +82,9 @@ export default function DraftPage({ surrender }) {
         )}
       </div>
 
-      <section className="text-yellow-700 h-[20%] bg-black">
+      <section className="deck">
         <h1 className="text-center h-[10%]">My deck</h1>
-        <div className="grid grid-cols-6 h-[90%]">
+        <div className="flex ">
           {playerOneDeck.map((character) => (
             <MiniCard
               key={character.id}
