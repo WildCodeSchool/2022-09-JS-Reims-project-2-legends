@@ -4,7 +4,7 @@
   padding: 5px 10px;
   border-radius: 20px;
   position: absolute;
-  top: 18%;
+  top: 25%;
   right: 2%;
 }
 
@@ -24,4 +24,20 @@
 
 .cards > * {
   margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .home-btn {
+    top: 12%;
+  }
+}
+
+.score {
+  color: #5ee565;
+  font-size: 1.5em;
+}
+
+.player-name {
+  color: #5ee565;
+  font-size: 1.5em;
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import CardProps from "../../prop-types/CardProps";
 import Card from "../Global/Card";
+import "./Fight.css";
 
 export default function Fight({
   playerOneCard,
@@ -30,6 +31,7 @@ export default function Fight({
         </>
       ) : (
         <button
+          className="validate-btn"
           type="button"
           onClick={() => {
             // si playerOneCard et playerTwoCard sont définis
