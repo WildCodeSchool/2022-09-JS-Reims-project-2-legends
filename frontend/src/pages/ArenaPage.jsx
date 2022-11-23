@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Fight from "../components/Fight/Fight";
 import Draft from "../components/Draft/Draft";
 import MiniCard from "../components/Global/MiniCard";
+import "./ArenaPage.css";
 
 export default function DraftPage({ surrender }) {
   const [playerOneDeck, setPlayerOneDeck] = useState([]);
@@ -51,7 +52,7 @@ export default function DraftPage({ surrender }) {
       </div>
 
       <div className="Container flex items-center w-screen overflow-x-scroll h-full xl:justify-center xl:ove+hidden gap-6">
-        <button type="button" onClick={surrender}>
+        <button className="home-btn" type="button" onClick={surrender}>
           Home
         </button>
         {decksReady ? (
