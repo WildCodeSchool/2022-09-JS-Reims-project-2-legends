@@ -24,7 +24,7 @@ export default function DraftPage({ surrender }) {
   return (
     <div className="flex flex-col h-screen">
       <div className="deck">
-        <div className="flex ">
+        <div className="cards">
           {playerTwoDeck.map((character) => (
             <MiniCard
               key={character.id}
@@ -48,7 +48,7 @@ export default function DraftPage({ surrender }) {
             />
           ))}
         </div>
-        <h1 className="text-center h-[10%]">Opponent Deck</h1>
+        <h1 className="text-center">Opponent Deck</h1>
       </div>
 
       <div className="Container flex items-center w-screen overflow-x-scroll h-full xl:justify-center xl:ove+hidden gap-6">
@@ -83,8 +83,8 @@ export default function DraftPage({ surrender }) {
       </div>
 
       <section className="deck">
-        <h1 className="text-center h-[10%]">My deck</h1>
-        <div className="flex ">
+        <h1 className="text-center">My deck</h1>
+        <div className="cards">
           {playerOneDeck.map((character) => (
             <MiniCard
               key={character.id}

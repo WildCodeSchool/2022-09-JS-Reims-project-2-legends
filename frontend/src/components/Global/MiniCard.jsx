@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./MiniCard.css";
 
 export default function MiniCard({ character, selectCardToPlay }) {
   const image = character.image.url;
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center overflow-hidden">
-      <div className="border-pink-900 border-solid border-4 w-[75%] rounded-[3xl] aspect-auto">
+    <div className="mini-card flex flex-col items-center justify-center overflow-hidden">
+      <div className="border-pink-900 border-solid border-2 rounded-[3xl] aspect-auto">
         <img
           src={image}
           alt=""
