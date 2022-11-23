@@ -5,7 +5,7 @@ import Draft from "../components/Draft/Draft";
 import MiniCard from "../components/Global/MiniCard";
 import "./ArenaPage.css";
 
-export default function DraftPage({ surrender }) {
+export default function DraftPage({ surrender, player1, player2 }) {
   const [playerOneDeck, setPlayerOneDeck] = useState([]);
   const [playerTwoDeck, setPlayerTwoDeck] = useState([]);
   const [playerOneCard, setPlayerOneCard] = useState();
@@ -48,7 +48,7 @@ export default function DraftPage({ surrender }) {
             />
           ))}
         </div>
-        <h1 className="text-center">Opponent Deck</h1>
+        <h1 className="player-name text-center">{player2}</h1>
       </div>
 
       <div className="Container flex items-center w-screen overflow-x-scroll h-full xl:justify-center xl:ove+hidden gap-6">
@@ -57,7 +57,9 @@ export default function DraftPage({ surrender }) {
         </button>
         {decksReady ? (
           <>
-            <p>{playerOneScore}</p>
+            <p className="score">
+              {player1} :{playerOneScore}
+            </p>
             <Fight
               playerOneCard={playerOneCard}
               playerTwoCard={playerTwoCard}
@@ -72,7 +74,12 @@ export default function DraftPage({ surrender }) {
               setPlayerOneScore={setPlayerOneScore}
               setPlayerTwoScore={setPlayerTwoScore}
             />
-            <p>{playerTwoScore}</p>
+            <p className="score">
+              {`
+              ${player2}
+              ${playerTwoScore}
+            `}
+            </p>
           </>
         ) : (
           <Draft
@@ -83,7 +90,7 @@ export default function DraftPage({ surrender }) {
       </div>
 
       <section className="deck">
-        <h1 className="text-center">My deck</h1>
+        <h1 className="player-name text-center">{player1}</h1>
         <div className="cards">
           {playerOneDeck.map((character) => (
             <MiniCard
@@ -115,4 +122,6 @@ export default function DraftPage({ surrender }) {
 
 DraftPage.propTypes = {
   surrender: PropTypes.func.isRequired,
+  player1: PropTypes.string.isRequired,
+  player2: PropTypes.string.isRequired,
 };
