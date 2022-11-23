@@ -7,9 +7,10 @@ import "./Fight.css";
 export default function Fight({
   playerOneCard,
   playerTwoCard,
-  setFrozen,
   setPlayerOneScore,
   setPlayerTwoScore,
+  setFrozen,
+  nextRound,
 }) {
   const [wantedStat, setWantedStat] = useState();
 
@@ -25,6 +26,7 @@ export default function Fight({
             onClick={() => {
               setFrozen(false);
               setWantedStat();
+              nextRound();
             }}
           >
             Next
@@ -79,6 +81,7 @@ Fight.propTypes = {
   playerOneCard: CardProps,
   playerTwoCard: CardProps,
   setFrozen: PropTypes.func.isRequired,
+  nextRound: PropTypes.func.isRequired,
   setPlayerOneScore: PropTypes.func.isRequired,
   setPlayerTwoScore: PropTypes.func.isRequired,
 };
