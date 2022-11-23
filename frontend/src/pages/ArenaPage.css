@@ -7,3 +7,11 @@
   top: 18%;
   right: 2%;
 }
+
+.Container {
+  justify-content: space-between;
+}
+
+.deck {
+  justify-content: space-between;
+}
