@@ -5,13 +5,13 @@ import logo from "../assets/legends-logo.png";
 
 function HomePage({ play, player1, setPlayer1, player2, setPlayer2 }) {
   return (
-    <main className="h-screen w-screen flex flex-col justify-evenly items-center text-yellow-500">
+    <main className="p-4 min-h-screen w-screen flex flex-col justify-evenly items-center text-yellow-500">
       <h1 className="text-2xl text-white">LEGENDS</h1>
       <img className="logo" src={logo} alt="Legends logo" />
       <Navbar />
       <section
         id="bottom-section"
-        className="flex justify-evenly items-center md:w-1/2"
+        className="flex justify-evenly items-center sm:-m-0"
       >
         <input
           type="text"

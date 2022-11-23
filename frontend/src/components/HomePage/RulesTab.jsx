@@ -2,11 +2,11 @@ import React from "react";
 
 function RulesTab() {
   return (
-    <div className="h-[80%] overflow-scroll overflow-auto scrollbar-hide">
+    <>
       <h3 className="w-screen text-center text-[#54EB75]">
         {"règles".toUpperCase()}
       </h3>
-      <section className="w-5/6 overflow-y-auto flex flex-col bg-green-800 rounded-xl md:w-1/2 text-green-300 p-2 m-auto">
+      <section className=" overflow-y-auto flex flex-col bg-green-800 rounded-xl max-w-[800px] text-green-300 p-2 m-auto  ">
         <p className="text-center">Le jeu se déroule en deux phases :</p>
         <br />
         <p className="text-yellow-500 text-left underline">DRAFT PICK :</p>
@@ -28,7 +28,7 @@ function RulesTab() {
         élevée donne 1 point au joueur. La partie se termine quand les 2 joueurs
         n’ont plus de cartes.
       </section>
-    </div>
+    </>
   );
 }
 
