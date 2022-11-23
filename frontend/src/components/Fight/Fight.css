@@ -1,0 +1,12 @@
+.stat-text {
+  color: rgb(102, 244, 102);
+  font-size: 1.3em;
+  text-shadow: 5px 0px 13px green;
+}
+
+.next-btn {
+  color: white;
+  background-color: rgb(66, 222, 66);
+  padding: 3px 15px;
+  border-radius: 10px;
+}

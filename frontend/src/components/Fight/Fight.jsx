@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import CardProps from "../../prop-types/CardProps";
 import Card from "../Global/Card";
+import "./Fight.css";
 
 export default function Fight({
   playerOneCard,
@@ -17,8 +18,9 @@ export default function Fight({
       {playerOneCard && <Card character={playerOneCard} />}
       {wantedStat ? (
         <>
-          <p>{wantedStat}</p>
+          <p className="stat-text">{wantedStat.toUpperCase()}</p>
           <button
+            className="next-btn"
             type="button"
             onClick={() => {
               setFrozen(false);
