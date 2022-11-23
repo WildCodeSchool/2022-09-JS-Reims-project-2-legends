@@ -35,6 +35,7 @@
 .score {
   color: #5ee565;
   font-size: 1.5em;
+  margin-right: 30px;
 }
 
 .player-name {

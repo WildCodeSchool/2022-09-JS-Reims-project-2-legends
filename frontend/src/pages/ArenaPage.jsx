@@ -90,7 +90,7 @@ export default function DraftPage({ surrender, player1, player2 }) {
             />
             <p className="score">
               {`
-              ${player2}
+              ${player2}: 
               ${playerTwoScore}
             `}
             </p>
